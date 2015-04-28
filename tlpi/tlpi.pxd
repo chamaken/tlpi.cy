@@ -1,3 +1,5 @@
+from posix.time cimport itimerspec
+
 cdef extern from "tlpi_hdr.h" nogil:
     # get_num.h
     enum:
@@ -18,3 +20,6 @@ cdef extern from "tlpi_hdr.h" nogil:
     void fatal(const char *format, ...)
     void usageErr(const char *format, ...)
     void cmdLineErr(const char *format, ...)
+
+    # itimerspec_from_str.h
+    void itimerspecFromStr(char *str, itimerspec *tsp)
